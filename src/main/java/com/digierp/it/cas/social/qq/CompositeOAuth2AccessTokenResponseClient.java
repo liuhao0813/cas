@@ -1,4 +1,4 @@
-package com.digierp.it.cms.qq;
+package com.digierp.it.cas.social.qq;
 
 import org.springframework.security.oauth2.client.endpoint.DefaultAuthorizationCodeTokenResponseClient;
 import org.springframework.security.oauth2.client.endpoint.OAuth2AccessTokenResponseClient;

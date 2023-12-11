@@ -1,4 +1,4 @@
-package com.digierp.it.cms.qq.util;
+package com.digierp.it.cas.social.qq.util;
 
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;

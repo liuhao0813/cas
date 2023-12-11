@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.digierp.it.cas.validate.code.image;
+package com.digierp.it.cas.validate.image;
 
 import javax.imageio.ImageIO;
 

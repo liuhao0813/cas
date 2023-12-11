@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.properties;
+package com.digierp.it.cas.properties;
 
 /**
  * @author zhailiang
@@ -16,17 +16,17 @@ public interface SecurityConstants {
 	/**
 	 * 当请求需要身份认证时，默认跳转的url
 	 * 
-	 * @see SecurityController
+	 * @see
 	 */
 	String DEFAULT_UNAUTHENTICATION_URL = "/authentication/require";
 	/**
 	 * 默认的用户名密码登录请求处理url
 	 */
-	String DEFAULT_SIGN_IN_PROCESSING_URL_FORM = "/authentication/form";
+	String DEFAULT_SIGN_IN_PROCESSING_URL_FORM = "/login/image";
 	/**
 	 * 默认的手机验证码登录请求处理url
 	 */
-	String DEFAULT_SIGN_IN_PROCESSING_URL_MOBILE = "/authentication/mobile";
+	String DEFAULT_SIGN_IN_PROCESSING_URL_MOBILE = "/login/mobile";
 	/**
 	 * 默认的OPENID登录请求处理url
 	 */

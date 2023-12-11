@@ -1,48 +1,60 @@
-package com.digierp.it.cas.social.qq;
+package com.digierp.it.cas.social.wechat;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class QQUserInfo implements OAuth2User {
+@Setter
+@Getter
+public class WeChatUserInfo implements OAuth2User {
 
     // 统一赋予USER角色
     private List<GrantedAuthority> authorities =
             AuthorityUtils.createAuthorityList("USER");
     private Map<String, Object> attributes;
 
+    //	普通用户的标识，对当前开发者账号唯一
+    private String openid;
+    //	普通用户昵称
     private String nickname;
-    @JsonProperty("figureurl")
-    private String figureUrl30;
-    @JsonProperty("figureurl_1")
-    private String figureUrl50;
-    @JsonProperty("figureurl_2")
-    private String figureUrl100;
-    @JsonProperty("figureurl_qq_1")
-    private String qqFigureUrl40;
-    @JsonProperty("figureurl_qq_2")
-    private String qqFigureUrl100;
-    private String gender;
-    // 携带openId备用
-    private String openId;
+    //	普通用户性别，1为男性，2为女性
+    private String sex;
+    //	普通用户个人资料填写的省份
+    private String province;
+    //	普通用户个人资料填写的城市
+    private String city;
+    //	国家，如中国为CN
+    private String country;
+    //	用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空
+    private String headimgurl;
+    //	用户特权信息，json数组，如微信沃卡用户为（chinaunicom）
+    private List<String> privilege;
+    //	用户统一标识。针对一个微信开放平台账号下的应用，同一用户的unionid是唯一的。
+    private String unionid;
+
+    private String language;
+
     @Override
     public Map<String, Object> getAttributes() {
         if (this.attributes == null) {
             this.attributes = new HashMap<>();
             this.attributes.put("nickname", this.getNickname());
-            this.attributes.put("figureUrl30", this.getFigureUrl30());
-            this.attributes.put("figureUrl50", this.getFigureUrl50());
-            this.attributes.put("figureUrl100", this.getFigureUrl100());
-            this.attributes.put("qqFigureUrl40", this.getQqFigureUrl40());
-            this.attributes.put("qqFigureUrl100", this.getQqFigureUrl100());
-            this.attributes.put("gender", this.getGender());
-            this.attributes.put("openId", this.getOpenId());
+            this.attributes.put("sex", this.getSex());
+            this.attributes.put("province", this.getProvince());
+            this.attributes.put("city", this.getCity());
+            this.attributes.put("country", this.getCountry());
+            this.attributes.put("headimgurl", this.getHeadimgurl());
+            this.attributes.put("privilege", this.getPrivilege());
+            this.attributes.put("openId", this.getOpenid());
+            this.attributes.put("language", this.getLanguage());
         }
         return attributes;
     }
@@ -57,75 +69,7 @@ public class QQUserInfo implements OAuth2User {
         return this.nickname;
     }
 
-    public void setAuthorities(List<GrantedAuthority> authorities) {
-        this.authorities = authorities;
-    }
-
-    public void setAttributes(Map<String, Object> attributes) {
-        this.attributes = attributes;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getFigureUrl30() {
-        return figureUrl30;
-    }
-
-    public void setFigureUrl30(String figureUrl30) {
-        this.figureUrl30 = figureUrl30;
-    }
-
-    public String getFigureUrl50() {
-        return figureUrl50;
-    }
-
-    public void setFigureUrl50(String figureUrl50) {
-        this.figureUrl50 = figureUrl50;
-    }
-
-    public String getFigureUrl100() {
-        return figureUrl100;
-    }
-
-    public void setFigureUrl100(String figureUrl100) {
-        this.figureUrl100 = figureUrl100;
-    }
-
-    public String getQqFigureUrl40() {
-        return qqFigureUrl40;
-    }
-
-    public void setQqFigureUrl40(String qqFigureUrl40) {
-        this.qqFigureUrl40 = qqFigureUrl40;
-    }
-
-    public String getQqFigureUrl100() {
-        return qqFigureUrl100;
-    }
-
-    public void setQqFigureUrl100(String qqFigureUrl100) {
-        this.qqFigureUrl100 = qqFigureUrl100;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getOpenId() {
-        return openId;
-    }
-
-    public void setOpenId(String openId) {
-        this.openId = openId;
+    public void setNickname(String nickname) throws UnsupportedEncodingException {
+        this.nickname = new String(nickname.getBytes("ISO-8859-1"), "UTF-8");
     }
 }

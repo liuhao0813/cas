@@ -1,6 +1,6 @@
-package com.digierp.it.cms.qq;
+package com.digierp.it.cas.social.qq;
 
-import com.digierp.it.cms.qq.util.TextHtmlHttpMessageConverter;
+import com.digierp.it.cas.social.qq.util.TextHtmlHttpMessageConverter;
 import org.springframework.security.oauth2.client.endpoint.OAuth2AccessTokenResponseClient;
 import org.springframework.security.oauth2.client.endpoint.OAuth2AuthorizationCodeGrantRequest;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;

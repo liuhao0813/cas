@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.properties;
+package com.digierp.it.cas.properties;
 
 /**
  * 验证码配置

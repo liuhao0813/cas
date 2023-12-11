@@ -1,6 +1,6 @@
-package com.digierp.it.cms.qq;
+package com.digierp.it.cas.social.qq;
 
-import com.digierp.it.cms.qq.util.JacksonFromTextHtmlHttpMessageConverter;
+import com.digierp.it.cas.social.qq.util.JacksonFromTextHtmlHttpMessageConverter;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;

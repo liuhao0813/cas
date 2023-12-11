@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.digierp.it.cas.authentication.mobile;
+package com.digierp.it.cas.validate.sms;
 
 import java.util.Collection;
 
@@ -46,7 +46,6 @@ public class SmsCodeAuthenticationToken extends AbstractAuthenticationToken {
 	 * authentication token.
 	 *
 	 * @param principal
-	 * @param credentials
 	 * @param authorities
 	 */
 	public SmsCodeAuthenticationToken(Object principal,

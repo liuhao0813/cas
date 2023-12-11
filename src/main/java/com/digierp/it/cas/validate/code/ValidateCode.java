@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.validate.code;
+package com.digierp.it.cas.validate.code;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

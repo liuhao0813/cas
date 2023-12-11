@@ -1,19 +1,16 @@
 /**
  * 
  */
-package com.imooc.security.core.validate.code;
+package com.digierp.it.cas.validate.code;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.lang.StringUtils;
+import com.digierp.it.cas.properties.SecurityConstants;
+import com.digierp.it.cas.properties.SecurityProperties;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -22,8 +19,10 @@ import org.springframework.util.AntPathMatcher;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.imooc.security.core.properties.SecurityConstants;
-import com.imooc.security.core.properties.SecurityProperties;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 校验验证码的过滤器
@@ -32,23 +31,21 @@ import com.imooc.security.core.properties.SecurityProperties;
  *
  */
 @Component("validateCodeFilter")
+@RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class ValidateCodeFilter extends OncePerRequestFilter implements InitializingBean {
 
 	/**
 	 * 验证码校验失败处理器
 	 */
-	@Autowired
-	private AuthenticationFailureHandler authenticationFailureHandler;
+	private final AuthenticationFailureHandler authenticationFailureHandler;
 	/**
 	 * 系统配置信息
 	 */
-	@Autowired
-	private SecurityProperties securityProperties;
+	private final SecurityProperties securityProperties;
 	/**
 	 * 系统中的校验码处理器
 	 */
-	@Autowired
-	private ValidateCodeProcessorHolder validateCodeProcessorHolder;
+	private final ValidateCodeProcessorHolder validateCodeProcessorHolder;
 	/**
 	 * 存放所有需要校验验证码的url
 	 */

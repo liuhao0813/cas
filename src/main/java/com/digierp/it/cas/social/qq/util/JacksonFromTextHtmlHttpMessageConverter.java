@@ -1,4 +1,4 @@
-package com.digierp.it.cms.qq.util;
+package com.digierp.it.cas.social.qq.util;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;

@@ -1,14 +1,16 @@
 /**
  * 
  */
-package com.imooc.security.browser.authentication;
+package com.digierp.it.cas.component;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.digierp.it.cas.properties.LoginResponseType;
+import com.digierp.it.cas.properties.SecurityProperties;
+import com.digierp.it.cas.support.SimpleResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +20,6 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationFa
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.imooc.security.core.properties.LoginResponseType;
-import com.imooc.security.core.properties.SecurityProperties;
-import com.imooc.security.core.support.SimpleResponse;
 
 /**
  * 浏览器环境下登录失败的处理器
@@ -29,7 +28,7 @@ import com.imooc.security.core.support.SimpleResponse;
  *
  */
 @Component("imoocAuthenctiationFailureHandler")
-public class ImoocAuthenctiationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
+public class CasAuthenctiationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
@@ -44,7 +43,7 @@ public class ImoocAuthenctiationFailureHandler extends SimpleUrlAuthenticationFa
 	 */
 	@Override
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-			AuthenticationException exception) throws IOException, ServletException {
+										AuthenticationException exception) throws IOException, ServletException {
 		
 		logger.info("登录失败");
 		

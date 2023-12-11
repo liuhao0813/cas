@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.validate.code;
+package com.digierp.it.cas.validate.code;
 
 import java.util.Map;
 

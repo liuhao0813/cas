@@ -1,4 +1,4 @@
-package com.digierp.it.cms.qq;
+package com.digierp.it.cas.social.qq;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,20 +1,20 @@
 /**
  * 
  */
-package com.imooc.security.app.validate.code.impl;
+package com.digierp.it.cas.validate.code.impl;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang.StringUtils;
+import com.digierp.it.cas.validate.code.ValidateCode;
+import com.digierp.it.cas.validate.code.ValidateCodeException;
+import com.digierp.it.cas.validate.code.ValidateCodeRepository;
+import com.digierp.it.cas.validate.code.ValidateCodeType;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.ServletWebRequest;
 
-import com.imooc.security.core.validate.code.ValidateCode;
-import com.imooc.security.core.validate.code.ValidateCodeException;
-import com.imooc.security.core.validate.code.ValidateCodeRepository;
-import com.imooc.security.core.validate.code.ValidateCodeType;
 
 /**
  * 基于redis的验证码存取器，避免由于没有session导致无法存取验证码的问题
@@ -78,9 +78,9 @@ public class RedisValidateCodeRepository implements ValidateCodeRepository {
 	 * @return
 	 */
 	private String buildKey(ServletWebRequest request, ValidateCodeType type) {
-		String deviceId = request.getHeader("deviceId");
+		String deviceId = request.getParameter("deviceId");
 		if (StringUtils.isBlank(deviceId)) {
-			throw new ValidateCodeException("请在请求头中携带deviceId参数");
+			throw new ValidateCodeException("请在请求参数中携带deviceId参数");
 		}
 		return "code:" + type.toString().toLowerCase() + ":" + deviceId;
 	}

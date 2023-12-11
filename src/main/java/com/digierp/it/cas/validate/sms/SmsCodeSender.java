@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.digierp.it.cas.validate.code.sms;
+package com.digierp.it.cas.validate.sms;
 
 /**
  * @author zhailiang

@@ -1,9 +1,10 @@
 /**
  * 
  */
-package com.imooc.security.core.validate.code;
+package com.digierp.it.cas.validate.code;
 
-import com.imooc.security.core.properties.SecurityConstants;
+
+import com.digierp.it.cas.properties.SecurityConstants;
 
 /**
  * 

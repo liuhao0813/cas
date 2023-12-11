@@ -1,22 +1,17 @@
 /**
  * 
  */
-package com.imooc.security.core.validate.code.impl;
+package com.digierp.it.cas.validate.code.impl;
 
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+import com.digierp.it.cas.validate.code.*;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 
-import com.imooc.security.core.validate.code.ValidateCode;
-import com.imooc.security.core.validate.code.ValidateCodeException;
-import com.imooc.security.core.validate.code.ValidateCodeGenerator;
-import com.imooc.security.core.validate.code.ValidateCodeProcessor;
-import com.imooc.security.core.validate.code.ValidateCodeRepository;
-import com.imooc.security.core.validate.code.ValidateCodeType;
 
 /**
  * 抽象的图片验证码处理器

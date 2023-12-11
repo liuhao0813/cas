@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.support;
+package com.digierp.it.cas.support;
 
 /**
  * 简单响应的封装类

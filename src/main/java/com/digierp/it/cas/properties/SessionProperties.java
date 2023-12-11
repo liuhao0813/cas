@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.properties;
+package com.digierp.it.cas.properties;
 
 /**
  * session管理相关配置项

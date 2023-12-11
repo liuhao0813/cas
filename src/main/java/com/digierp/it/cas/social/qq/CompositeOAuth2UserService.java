@@ -1,4 +1,4 @@
-package com.digierp.it.cms.qq;
+package com.digierp.it.cas.social.qq;
 
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

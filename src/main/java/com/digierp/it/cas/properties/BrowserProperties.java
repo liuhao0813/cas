@@ -1,7 +1,9 @@
 /**
  * 
  */
-package com.imooc.security.core.properties;
+package com.digierp.it.cas.properties;
+
+import com.digierp.it.cas.properties.SessionProperties;
 
 /**
  * 浏览器环境配置项

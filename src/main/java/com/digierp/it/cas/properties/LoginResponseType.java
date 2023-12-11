@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.imooc.security.core.properties;
+package com.digierp.it.cas.properties;
 
 /**
  * 认证成功后的响应方式

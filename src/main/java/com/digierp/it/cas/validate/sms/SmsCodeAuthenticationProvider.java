@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.digierp.it.cas.authentication.mobile;
+package com.digierp.it.cas.validate.sms;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;

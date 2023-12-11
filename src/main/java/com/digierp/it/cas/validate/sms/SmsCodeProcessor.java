@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.digierp.it.cas.validate.code.sms;
+package com.digierp.it.cas.validate.sms;
 
 import com.digierp.it.cas.properties.SecurityConstants;
 import com.digierp.it.cas.validate.code.ValidateCode;
